@@ -1,0 +1,4 @@
+api/__pycache__
+api/migrations/__pycache__
+assignment/__pycache__
+db.sqlite3
