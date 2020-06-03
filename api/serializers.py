@@ -6,4 +6,4 @@ from .models import HotelPackage
 class HotelPackageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = HotelPackage
-        fields = ('hotel_name', 'price', 'duration', 'validity_duration', 'description')
+        fields = ('id', 'hotel_name', 'price', 'duration', 'validity_duration', 'description')
