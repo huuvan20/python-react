@@ -126,7 +126,7 @@ class App extends Component {
     deletePackage(id) {
         var csrftoken = this.getCookie('csrftoken');
         var request = new Request(
-            'http://127.0.0.1:8000/api/packages/'+id+'/', {
+            '/api/packages/'+id+'/', {
             headers: {
                 'X-CSRFToken': csrftoken
             }

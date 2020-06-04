@@ -3,5 +3,6 @@ api/migrations/__pycache__
 frontend/migrations/__pycache__
 frontend/__pycache__
 frontend/node_modules
+frontend/static/frontend/*.*
 assignment/__pycache__
 db.sqlite3
