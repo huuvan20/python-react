@@ -1,10 +1,12 @@
 import React from "react";
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 export default function List(props) {
     return (
         <div>
             <h1>A list of hotel packages</h1>
-            <table>
+            <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>Hotel Name</th>
@@ -20,37 +22,22 @@ export default function List(props) {
                     props.packages.map(hotelPackage => {
                         return (
                             <tr key={hotelPackage.id}>
+                                <td>{hotelPackage.hotel_name}</td>
+                                <td>{hotelPackage.price}</td>
+                                <td>{hotelPackage.duration}</td>
+                                <td>{hotelPackage.validity_duration}</td>
+                                <td>{hotelPackage.description}</td>
                                 <td>
-                                    {hotelPackage.hotel_name}
-                                    <input name="hotel_name" value=""/>
-                                </td>
-                                <td>
-                                    {hotelPackage.price}
-                                    <input name="price" value=""/>
-                                </td>
-                                <td>
-                                    {hotelPackage.duration}
-                                    <input name="duration" value=""/>
-                                </td>
-                                <td>
-                                    {hotelPackage.validity_duration}
-                                    <input name="validity_duration" value=""/>
-                                </td>
-                                <td>
-                                    {hotelPackage.description}
-                                    <input name="description" value=""/>
-                                </td>
-                                <td>
-                                    <button onClick={() => props.deletePackage(hotelPackage.id)}>Delete</button>
-                                    <button onClick={() => props.EditPackage(hotelPackage.id)}>Edit</button>
-                                    <button onClick={() => props.SavePackage(hotelPackage.id)}>Save</button>
+                                    <Button variant="warning" onClick={() => props.turnOnEdit(hotelPackage.id)}>Edit</Button>{'  '}
+                                    <Button variant="danger" onClick={() => props.deletePackage(hotelPackage.id)}>Delete</Button>
                                 </td>
                             </tr>
                         )
                     })
                 }
                 </tbody>
-            </table>
+            </Table>
+            <Button variant="primary" onClick={() => props.turnOnCreate()}>Add A Package</Button>
         </div>
     );
 }

@@ -4,8 +4,8 @@ from django.db import models
 class HotelPackage(models.Model):
     hotel_name = models.CharField(max_length=255)
     price = models.FloatField()
-    duration = models.DurationField()
-    validity_duration = models.DurationField()
+    duration = models.CharField(max_length=255)
+    validity_duration = models.CharField(max_length=255)
     description = models.TextField()
     
     def __str__(self):
