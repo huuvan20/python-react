@@ -1,3 +1,3 @@
 # python-react
-RUN: make up
-The web app is at: http://127.0.0.1:3000/
+1) make up
+2) The web app is at: http://127.0.0.1:3000/
